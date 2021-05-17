@@ -5,11 +5,11 @@ import firestore from "firebase/firestore"
 export default function ShowComment(){
 
     
-    const [rate , setRate] = useState("0")
-    const ratingChanged = (newRating) => {
-        console.log(newRating)
-        setRate(newRating)
-      }
+    // const [rate , setRate] = useState("0")
+    // const ratingChanged = (newRating) => {
+    //     console.log(newRating)
+    //     setRate(newRating)
+    //   }
 
     
     return(
