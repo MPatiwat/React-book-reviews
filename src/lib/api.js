@@ -57,6 +57,24 @@ export async function addBook(bookData) {
   return null;
 }
 
+export async function addComment(commentData) {
+  console.log(commentData.name)
+  const response = await fetch(
+    `${FIREBASE_DOMAIN}/Comment/${commentData.name}.json`,
+    {
+      method: "PUT",
+      body: JSON.stringify(commentData),
+    }
+  );
+  const data = await response.json();
+
+  if (!response.ok) {
+    throw new Error(data.message || "Could not create book.");
+  }
+
+  return null;
+}
+
 export async function deleteUser(userData) {
   const response = await fetch(`${FIREBASE_DOMAIN}/users/${userData}.json`, {
     method: "DELETE",
